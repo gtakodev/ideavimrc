@@ -1,0 +1,90 @@
+""" Map leader to space ---------------------
+let mapleader=" "
+
+""" Plugins  --------------------------------
+set surround
+set multiple-cursors
+set commentary
+set argtextobj
+set easymotion
+set textobj-entire
+set ReplaceWithRegister
+set which-key
+set highlightedyank
+set sneak
+set NERDTree
+
+""" Plugin settings -------------------------
+let g:argtextobj_pairs="[:],{:},(:),<:>"
+
+""" Common settings -------------------------
+set mouse='a'               " enable the use of the mouse clicks
+set showmode=false          " message on status line to show current mode
+set clipboard+=unnamed   " Os clipboaord
+set breakindent=true        " Indent soft wrapped lines to match the first line's indent
+set ignorecase              " Ignore case in search patterns
+set smartcase               " Case sensitive search if any character in the pattern is uppercase
+set notimeout
+set timeoutlen=300          " Timeout duration for a mapped keu sequence
+set list                    " Show whitespace
+set scrolloff=10            " minimum of lines above and below the cursor
+set incsearch               " highlight match while typing search pattern
+set hlsearch
+set number                  " print the line number in front of each line
+set relativenumber
+set visualbell
+
+""" Idea specific settings ------------------
+set ideajoin
+set ideaput
+set ideastatusicon=gray
+set idearefactormode=keep
+
+""" Mappings --------------------------------
+
+let g:WhichKey_ShowVimActions = "true"
+let g:WhichKeyDesc_search = "<leader>s [S]earch"
+let g:WhichKeyDesc_toggle = "<leader>t [T]oggle"
+let g:WhichKeyDesc_git    = "<leader>h Git [H]unk"
+
+let g:WhichKeyDesc_search_files = "<leader>sf [S]earch [F]iles"
+map <leader>sf <Action>(GotoFile)
+let g:WhichKeyDesc_search_word = "<leader>sw [S]earch [W]ord"
+map <leader>sw <Action>(FindInPath)
+let g:WhichKeyDesc_search_recent = "<leader>sr [S]earch [R]ecent"
+map <leader>sr <Action>(RecentFiles)
+let g:WhichKeyDesc_search_word_in_file = "<leader>/s [S]earch [\/] in current buffer"
+map <leader>s/ <Action>(Find)
+
+inoremap jk <Esc>
+
+let g:WhichKeyDesc_diagnostics = "<leader>q Open diagnostic [Q]uickfix list"
+map <leader>q <Action>(ActivateProblemsViewToolWindow)
+
+map Q gq
+let g:WhichKeyDesc_rename = "grn [R]e[n]ame"
+map grn <Action>(RenameElement)
+let g:WhichKeyDesc_goto_actions = "gra [G]oto Code [A]ction"
+map gra <Action>(ShowIntentionActions)
+let g:WhichKey_goto_usages = "grr [\G]oto [R]eferences"
+map grr <Action>(ShowUsages)
+let g:WhichKey_goto_declaration = "grd [G]oto [D]eclaration"
+map grd <Action>(GotoDeclaration)
+let g:WhichKeyDesc_goto_implementation = "gri [G]oto [I]mplementation"
+map gri <Action>(GotoImplementation)
+
+let g:WhichKeyDesc_format_code = "<leader>q Format Code"
+map <leader>q <Action>(ReformatCode)
+
+map <leader>f <Plug>(easymotion-s)
+map <leader>e <Plug>(easymotion-f)
+
+map <leader>c <Action>(Stop)
+map <leader>z <Action>(ToggleDistractionFreeMode)
+
+map <leader>a <Action>(Annotate)
+map <S-Space> <Action>(GotoNextError)
+
+map <leader>b <Action>(ToggleLineBreakpoint)
+map <leader>o <Action>(FileStructurePopup)
+
